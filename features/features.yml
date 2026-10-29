@@ -1,0 +1,78 @@
+# features/features.yml — THE FEATURE INDEX for edgar-pipeline (schema features/v1, governance kit v0.1.1).
+# One entry per capability, stable id EDGP-NNN (never reused). status: shipped | partial | planned | deprecated | tbd.
+# `prd:` links each feature to PRD.md requirements. The PRD "Feature catalog" block is generated:
+#   python3 <bamr87/bamr87>/tools/governance_lint.py prd-sync . --write
+schema: features/v1
+repo: bamr87/edgar-pipeline
+
+features:
+  - id: EDGP-001
+    title: "Python package with an EDGAR User-Agent config and tests"
+    description: "Python package with an EDGAR User-Agent config and tests."
+    implemented: true
+    status: shipped
+    prd: [FR1]
+    surface: infra
+    link: pyproject.toml
+    tags: [phase-1]
+    date: 2026-10-28
+  - id: EDGP-002
+    title: "Fetch company submissions JSON with rate limiting (10 req/s cap)"
+    description: "Fetch company submissions JSON with rate limiting (10 req/s cap)."
+    implemented: false
+    status: planned
+    prd: [FR2]
+    surface: infra
+    docs: PRD.md
+    tags: [phase-1]
+    date: 2026-10-28
+  - id: EDGP-003
+    title: "Dagster assets for raw submissions and company facts"
+    description: "Dagster assets for raw submissions and company facts."
+    implemented: false
+    status: planned
+    prd: [FR3]
+    surface: infra
+    docs: PRD.md
+    tags: [phase-2]
+    date: 2026-10-28
+  - id: EDGP-004
+    title: "dbt project on DuckDB with staging and mart models"
+    description: "dbt project on DuckDB with staging and mart models."
+    implemented: false
+    status: planned
+    prd: [FR4]
+    surface: infra
+    docs: PRD.md
+    tags: [phase-2]
+    date: 2026-10-28
+  - id: EDGP-005
+    title: "MLflow-tracked baseline model on filing features"
+    description: "MLflow-tracked baseline model on filing features."
+    implemented: false
+    status: planned
+    prd: [FR5]
+    surface: infra
+    docs: PRD.md
+    tags: [phase-3]
+    date: 2026-10-28
+  - id: EDGP-006
+    title: "Export marts consumed by fredgar-ai and law-ai"
+    description: "Export marts consumed by fredgar-ai and law-ai."
+    implemented: false
+    status: planned
+    prd: [FR6]
+    surface: infra
+    docs: PRD.md
+    tags: [phase-3]
+    date: 2026-10-28
+  - id: EDGP-007
+    title: "Standard CI gate"
+    description: "Every push and PR runs the fleet's shared standard-ci gate."
+    implemented: true
+    status: shipped
+    prd: [NFR1]
+    surface: infra
+    link: .github/workflows/ci.yml
+    tags: [ci]
+    date: 2026-10-28
