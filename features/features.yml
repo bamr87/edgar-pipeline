@@ -8,7 +8,7 @@ repo: bamr87/edgar-pipeline
 features:
   - id: EDGP-001
     title: "Python package with an EDGAR User-Agent config and tests"
-    description: "Python package with an EDGAR User-Agent config and tests. user_agent() reads EDGAR_USER_AGENT and fails fast with ConfigError when it is unset, blank or has no contact (an email address or a URL); .env.example lists the variable."
+    description: "Python package with an EDGAR User-Agent config and tests. user_agent() reads EDGAR_USER_AGENT and fails fast with ConfigError when it is unset, blank or has no contact (an email address or a URL); .env.example lists the variable. submissions_url() accepts only an int CIK from 1 to 9999999999 (TypeError or ValueError otherwise)."
     implemented: true
     status: shipped
     prd: [FR1]

@@ -1,3 +1,5 @@
+import re
+
 import pytest
 
 from edgar_pipeline.config import MAX_REQUESTS_PER_SECOND, ConfigError, submissions_url, user_agent
@@ -5,6 +7,26 @@ from edgar_pipeline.config import MAX_REQUESTS_PER_SECOND, ConfigError, submissi
 
 def test_cik_padding():
     assert submissions_url(320193).endswith("CIK0000320193.json")
+
+
+@pytest.mark.parametrize(
+    ("cik", "filename"),
+    [(320193, "CIK0000320193.json"), (1, "CIK0000000001.json"), (9_999_999_999, "CIK9999999999.json")],
+)
+def test_submissions_url_valid_cik(cik, filename):
+    assert submissions_url(cik) == f"https://data.sec.gov/submissions/{filename}"
+
+
+@pytest.mark.parametrize("cik", [0, -5, 10**10])
+def test_submissions_url_rejects_out_of_range_cik(cik):
+    with pytest.raises(ValueError, match=rf"got {re.escape(str(cik))}$"):
+        submissions_url(cik)
+
+
+@pytest.mark.parametrize("cik", ["320193", 3.0, True, None], ids=["str", "float", "bool", "none"])
+def test_submissions_url_rejects_non_int_cik(cik):
+    with pytest.raises(TypeError, match=rf"got {re.escape(repr(cik))}$"):
+        submissions_url(cik)
 
 
 def test_rate_cap():
