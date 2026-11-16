@@ -6,9 +6,17 @@
 > Agents read this before [AGENTS.md](../AGENTS.md) conventions, the [PRD](../PRD.md), or the
 > [feature catalog](../features/features.yml). Ratified by merged PR; amended only per § 8.
 
-## 1. Mission
+## 1. Missions
 
-A modern data stack in miniature: ingest EDGAR filings, model them with dbt on DuckDB, orchestrate with Dagster, and track ML experiments in MLflow. It is a learning-first portfolio project in the bamr87 fleet: Upstream data source for bamr87/fredgar-ai (financial facts) and bamr87/law-ai (filing text).
+EDGAR Pipeline's direction is to become the ultimate open home for all things SEC EDGAR data pipelines — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, finance and data professionals, and the general public.** Analysts, researchers, downstream product builders and anyone studying public filings are first-class audiences. The aim is a shared, inspectable commons: the same filings, the same models, and the same trail from source document to structured fact for everyone.
+2. **Ingest, model and orchestrate public EDGAR filings as a reproducible modern data stack that anyone can inspect and rerun.** The path is a learning-first, open pipeline: dbt models on DuckDB, Dagster orchestration, and MLflow experiment tracking, with every step visible in the repository.
+3. **Feed downstream open products with a clear, auditable trail: financial facts for fredgar-ai and filing text for law-ai, without blending estimates into reported facts.** The pipeline is a source, not a black box; provenance travels with the data.
+
+These missions set the course; they do not claim the work is finished. They serve the PRD's picture of a modern data stack in miniature and this repo's role as an upstream source for the fleet's financial and legal products.
+
+_Source: [PRD.md](../PRD.md) §1.1._
 
 ## 2. Invariants (non-negotiable)
 
