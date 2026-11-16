@@ -8,12 +8,14 @@ repo: bamr87/edgar-pipeline
 features:
   - id: EDGP-001
     title: "Python package with an EDGAR User-Agent config and tests"
-    description: "Python package with an EDGAR User-Agent config and tests."
+    description: "Python package with an EDGAR User-Agent config and tests. user_agent() reads EDGAR_USER_AGENT and fails fast with ConfigError when it is unset, blank or has no contact (an email address or a URL); .env.example lists the variable."
     implemented: true
     status: shipped
     prd: [FR1]
     surface: infra
     link: pyproject.toml
+    docs: README.md
+    tests: [tests/test_config.py]
     tags: [phase-1]
     date: 2026-10-28
   - id: EDGP-002
