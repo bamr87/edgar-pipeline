@@ -15,6 +15,12 @@ Data pipeline for SEC EDGAR filings: Dagster orchestration, dbt models on DuckDB
 pip install -e .[dev] && pytest
 ```
 
+```bash
+pip install -e '.[dev,orchestration]'
+```
+
+Python 3.11 or later. The second command adds the `orchestration` extra (Dagster, dbt-duckdb, DuckDB, MLflow) for the planned phase 2 and 3 work; no code imports it yet. In zsh, quote extras as in the second command. The tests need no `EDGAR_USER_AGENT`: they set it with `monkeypatch`.
+
 ## Layout
 
 - `docs/` — constitution, amendments, ADRs
@@ -22,7 +28,11 @@ pip install -e .[dev] && pytest
 - `PRD.md` — requirements (FRn/NFRn) and the phased roadmap
 - `.github/` — CI, the `@claude` handler, the `evolve` lane (off by default), issue forms
 - `.claude/agents/builder.md` — the role the evolve lane runs as
-- everything else — the python, dagster skeleton
+- `src/edgar_pipeline/` — the Python package (src layout); `src/edgar_pipeline/config.py` holds the SEC fair-access settings: User-Agent, rate cap, CIK validation, submissions URL
+- `tests/` — the pytest suite
+- `pyproject.toml` — the package and its extras (`dev`, `orchestration`)
+- `.env.example` — every environment variable the code reads
+- No Dagster, dbt or MLflow code yet: EDGP-003 to EDGP-006 are planned.
 
 ## Conventions
 

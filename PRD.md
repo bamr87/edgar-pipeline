@@ -58,7 +58,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 
 | ID | Feature | Status | Where | Requirements |
 | --- | --- | --- | --- | --- |
-| [EDGP-001](features/features.yml) | Python package with an EDGAR User-Agent config and tests | shipped | [`pyproject.toml`](pyproject.toml) | FR1 |
+| [EDGP-001](features/features.yml) | Python package with an EDGAR User-Agent config and tests | shipped | [`pyproject.toml`](pyproject.toml) · [`README.md`](README.md) | FR1 |
 | [EDGP-002](features/features.yml) | Fetch company submissions JSON with rate limiting (10 req/s cap) | planned | [`PRD.md`](PRD.md) | FR2 |
 | [EDGP-003](features/features.yml) | Dagster assets for raw submissions and company facts | planned | [`PRD.md`](PRD.md) | FR3 |
 | [EDGP-004](features/features.yml) | dbt project on DuckDB with staging and mart models | planned | [`PRD.md`](PRD.md) | FR4 |
