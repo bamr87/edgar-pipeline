@@ -1,6 +1,6 @@
 # edgar-pipeline
 
-> Data pipeline for SEC EDGAR filings: Dagster orchestration, dbt models on DuckDB, MLflow experiments; feeds fredgar-ai and law-ai.
+> EDGAR Pipeline's direction is to become the ultimate open home for all things SEC EDGAR data pipelines: data, tools, resources and transparency, with reproducible ingest, dbt models, Dagster orchestration and an auditable trail into downstream open products for everyone ([constitution](docs/constitution.md) §1).
 
 A modern data stack in miniature: ingest EDGAR filings, model them with dbt on DuckDB, orchestrate with Dagster, and track ML experiments in MLflow.
 

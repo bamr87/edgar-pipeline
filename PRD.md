@@ -11,6 +11,23 @@ A modern data stack in miniature: ingest EDGAR filings, model them with dbt on D
 | Version | Date | Notes |
 | --- | --- | --- |
 | 0.1 | 2026-10-28 | Initial requirements and phased roadmap (repo foundation). |
+| 0.2 | 2026-11-16 | Added §1.1 missions (amendment record in docs/amendments/). |
+
+## 1.1 Missions
+
+EDGAR Pipeline's direction is to become the ultimate open home for all things SEC EDGAR data pipelines — data, tools, resources and transparency, gathered in one place that anyone can inspect and reuse.
+
+1. **Provide data, tools, resources and transparency for all stakeholders, finance and data professionals, and the general public.** Analysts, researchers, downstream product builders and anyone studying public filings are first-class audiences. The aim is a shared, inspectable commons: the same filings, the same models, and the same trail from source document to structured fact for everyone.
+2. **Ingest, model and orchestrate public EDGAR filings as a reproducible modern data stack that anyone can inspect and rerun.** The path is a learning-first, open pipeline: dbt models on DuckDB, Dagster orchestration, and MLflow experiment tracking, with every step visible in the repository.
+3. **Feed downstream open products with a clear, auditable trail: financial facts for fredgar-ai and filing text for law-ai, without blending estimates into reported facts.** The pipeline is a source, not a black box; provenance travels with the data.
+
+These missions set the course; they do not claim the work is finished. They serve the PRD's picture of a modern data stack in miniature and this repo's role as an upstream source for the fleet's financial and legal products.
+
+**Requirement**
+
+- MR1: Constitution §1 states one direction statement and exactly three numbered missions, and the README and AGENTS.md taglines match that direction and link to constitution §1.
+
+Feature [EDGP-008](features/features.yml) traces to requirement MR1.
 
 ## 2. Goals
 
@@ -65,6 +82,7 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | [EDGP-005](features/features.yml) | MLflow-tracked baseline model on filing features | planned | [`PRD.md`](PRD.md) | FR5 |
 | [EDGP-006](features/features.yml) | Export marts consumed by fredgar-ai and law-ai | planned | [`PRD.md`](PRD.md) | FR6 |
 | [EDGP-007](features/features.yml) | Standard CI gate | shipped | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | NFR1 |
+| [EDGP-008](features/features.yml) | Constitution missions | planned | [`docs/constitution.md`](docs/constitution.md) · [`PRD.md`](PRD.md) | MR1 |
 
 **Requirement → feature trace**
 
@@ -77,4 +95,5 @@ Every user-facing capability has a stable id in the feature catalog [`features/f
 | FR5 | EDGP-005 |
 | FR6 | EDGP-006 |
 | NFR1 | EDGP-007 |
+| MR1 | EDGP-008 |
 <!-- features:end -->
